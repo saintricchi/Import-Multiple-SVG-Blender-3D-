@@ -8,3 +8,5 @@ With this script you can import multiple SVG'S once into Blender 3D
 - Paste script and replace with your path
 - Hit "Run"
 - Done!
+
+> You can watch video-tutorial here: [YouTube](https://youtu.be/wBLpoSdl1KQ)
