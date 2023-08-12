@@ -1,0 +1,26 @@
+# Copyright (C) 2023 saintricchi design:saintricchi.com. All rights reserved.
+
+import bpy
+import os
+
+# Set the path to the folder containing SVG files
+folder_path = r"YOUR PATH HERE"
+
+# Get a list of all SVG files in the folder
+svg_files = [file for file in os.listdir(folder_path) if file.endswith(".svg")]
+
+# Clear existing mesh objects in the scene
+bpy.ops.object.select_all(action='DESELECT')
+bpy.ops.object.select_by_type(type='MESH')
+bpy.ops.object.delete()
+
+# Loop through each SVG file and import it as a mesh
+for svg_file in svg_files:
+    svg_file_path = os.path.join(folder_path, svg_file)
+    bpy.ops.import_curve.svg(filepath=svg_file_path)
+
+# Select all imported objects
+bpy.ops.object.select_all(action='SELECT')
+
+# Update the scene
+bpy.context.view_layer.update()
